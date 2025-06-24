@@ -28,10 +28,14 @@ A locally hosted chatbot powered by [Ollama](https://ollama.com), capable of **f
 
 ## What are we going to build?
 
-
+- Logical components of the Chatbot
 ![alt text](./images/chatbot_system_design.png)
 
+- How does the Input-Output Journey in the Chatbot happen?
 ![alt text](./images/sequence_diagram_ollama_chatbot.png)
+
+- How the Chatbot Communicates?
+![alt text](./images/chatbot_communication.png)
 
 
 ---
