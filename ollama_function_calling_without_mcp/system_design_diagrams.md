@@ -4,19 +4,19 @@
 sequenceDiagram
     participant U as User
     participant Host as Host (CLI Chatbot)
-    participant LS as LLM_Server (Ollama)
+    participant AOAI as Azure OpenAI API
     participant app as app_Server (FastAPI Tools)
     participant Arxiv as ArXiv API
 
     U->>Host: Types query<br/>"Find latest RAG papers"
-    Host->>LS: Sends prompt to /api/chat
-    LS-->>Host: Returns function_call<br/>name="arxiv_search", q="RAG"
-    Host->>app: GET /arxiv?q=RAG
+    Host->>AOAI: POST /chat/completions with user message and tools schema
+    AOAI-->>Host: Returns tool_call<br/>function="search_papers", topic="RAG"
+    Host->>app: GET /search_papers?topic=RAG
     app->>Arxiv: arxiv.Search(query="RAG")
-    Arxiv-->>app: Returns papers
-    app-->>Host: JSON response with titles, urls
-    Host->>LS: Sends function result as function role
-    LS-->>Host: Final LLM reply with summary
+    Arxiv-->>app: Returns matching papers
+    app-->>Host: JSON list of paper metadata
+    Host->>AOAI: POST /chat/completions with tool result
+    AOAI-->>Host: Final LLM reply with summarized response
     Host-->>U: Shows chat output
 ```
 
