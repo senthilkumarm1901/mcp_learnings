@@ -144,73 +144,6 @@ The CLI (cli_chatbot.py) acts as:
 
 ---
 
----
-
-## Result
-
-### Version 1: Without enabling debugging
-
-- Since we have used a quantized model for the web
-
-```bash
-WARN[0000] /path/to/ollama_function_calling_without_mcp/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
-[+] Creating 1/1
- ✔ Container ollama_function_calling_without_mcp-app_server-1  Running                                                                                                                                      0.0s 
-
-💬 Chat started. Type 'exit' or 'quit' to stop.
-
-You: Hi
-Bot: Hi there! 👋 
-
- 
-You: Search papers that talk about or use "Behaviour Link Graph"
-Bot: **Relevant papers:**
-
-**1. Behavior-Centric Link Prediction in Behavioral Link Graphs**
-* Authors: Xiangnan Wang, Hongyuan Zha, et al.
-* Publication: KDD, 2018
-* Abstract: This paper proposes a link prediction model based on user behavior in behavioral link graphs.
-
-**2. Learning Representation for Behavioral Link Graphs**
-* Authors: Mengnan Wang, Hongyuan Zha, et al.
-* Publication: AAAI, 2019
-* Abstract: This paper explores representation learning techniques for behavioral link graphs, focusing on capturing the temporal dynamics of user behavior.
-
-**3. Behavioral Link Graph Embedding for Recommendation**
-* Authors: Zijian He, Hongyuan Zha, et al.
-* Publication: SIGIR, 2019
-* Abstract: This paper presents a recommendation system based on behavioral link graph embedding, which captures the relationships between items and users.
-
-**4. A Survey on Behavioral Link Graphs: Representation, Inference, and Applications**
-* Authors: Chenhao Tan, Hongyuan Zha, et al.
-* Publication: arXiv, 2020
-* Abstract: This paper provides a comprehensive overview of behavioral link graphs, covering representation models, inference algorithms, and applications.
-
-**5. Learning Topic-Sensitive Behavioral Link Graphs for Recommendation**
-* Authors: Xingxing Zhang, Hongyuan Zha, et al.
-* Publication: AAAI, 2021
-* Abstract: This paper proposes a method for learning topic-sensitive behavioral link graphs, which captures the relationships between items and topics.
-
-**Additional resources:**
-
-* **GitHub repository:** https://github.com/facebookresearch/BLG
-* **Google Scholar search:** https://scholar.google.com/scholar?q=behavioral+link+graphs
-
-**Keywords:**
-
-* Behavioral Link Graphs (BLGs)
-* Link prediction
-* Representation learning
-* Recommendation systems
-* Social network analysis
-
-You: quit    
-👋 Exiting chat. Goodbye!
-
-```
-
----
-
 ## Issue I encountered
 
 ### ❓What Happens When stream=False (default)?
@@ -277,6 +210,8 @@ response = requests.post(..., stream=True)
 
 - I tried Ollama llama3:8b-instruct-q8_0 Instruct and Gemma 7B.
 - They hallucinated as if they hit the tool but never activated the tool :|
+
+Check the logs at [host/response_logs.log](./host/response_logs.log)
 
 ---
 
