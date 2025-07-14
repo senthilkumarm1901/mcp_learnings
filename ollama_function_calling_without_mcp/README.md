@@ -273,6 +273,11 @@ response = requests.post(..., stream=True)
 
 
 
+### Ollama Models I used never hit the tool!
+
+- I tried Ollama llama3:8b-instruct-q8_0 Instruct and Gemma 7B.
+- They hallucinated as if they hit the tool but never activated the tool :|
+
 ---
 
 ## ⚠️ Disclaimer
