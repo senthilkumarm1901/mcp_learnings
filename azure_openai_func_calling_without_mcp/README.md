@@ -40,7 +40,7 @@ azure_openai_func_calling_without_mcp
 ![alt text](./images/chatbot_system_design_azureopenai.png)
 
 - How does the Input-Output Journey in the Chatbot happen? (though the below diagram is Ollama, the concept is still the same)
-![alt text](./images/sequence_diagram_azure_openai_chatbot.png)
+![alt text](./images/sequence_diagram_azure_openai_chatbot_2.png)
 
 - How the Chatbot Communicates?
 ![alt text](./images/chatbot_communication_azureopenai.png)
