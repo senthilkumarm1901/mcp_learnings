@@ -4,7 +4,7 @@ services:
   app_server:
     build: ./app_server
     ports:
-      - "8000:8000"
+      - "8001:8001"
     volumes:
       - ./app_server:/app
     working_dir: /app
